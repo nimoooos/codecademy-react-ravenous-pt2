@@ -13,11 +13,9 @@ export default function BusinessList(props) {
       {
         businesses.map((x) => {
           console.log(x);
-          return (<Business />)
+          return (<Business business={x}/>)
         })
       }
-      <Business />
-      <Business />
     </div>
   );
 };

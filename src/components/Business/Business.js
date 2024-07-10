@@ -1,20 +1,21 @@
 import React from "react";
 import styles from "./Business.module.css";
 
-const business = {
-  imageSrc:
-    "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
-  name: "MarginOtto Pizzeria",
-  address: "1010 Paddington Way",
-  city: "Bordertown",
-  state: "NY",
-  zipCode: "10101",
-  category: "Italian",
-  rating: 4.5,
-  reviewCount: 90,
-};
+export default function Business(props) {
+  const business = {
+    imageSrc: props.business.image_url || "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: props.business.name || "Placeholder Name",
+    address: [props.business.location.address1,props.business.location.address2,props.business.location.address3].join(' ') || "Placeholder Address",
+    city: props.business.location.city || "Placeholderville",
+    state: props.business.location.state || "ST",
+    zipCode: props.business.location.zip_code || "00000",
+    category: props.business.categories.map((x) => { return x.title }).join(', ') || "Placeholder",
+    rating: props.business.rating||-1,
+    reviewCount: props.business.review_count||-1,
+  };
+  console.log("Loading Business...");
+  console.log(props);
 
-export default function Business () {
   return (
     <div className={styles.Business}>
       <div className={styles.imageContainer}>
