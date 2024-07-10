@@ -3,7 +3,7 @@ import styles from "./BusinessList.module.css";
 
 import Business from "../Business/Business";
 
-const BusinessList = () => {
+export default function BusinessList () {
   return (
     <div className={styles.BusinessList}>
       <Business />
@@ -15,5 +15,3 @@ const BusinessList = () => {
     </div>
   );
 };
-
-export default BusinessList;

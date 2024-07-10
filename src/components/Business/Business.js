@@ -14,7 +14,7 @@ const business = {
   reviewCount: 90,
 };
 
-const Business = () => {
+export default function Business () {
   return (
     <div className={styles.Business}>
       <div className={styles.imageContainer}>
@@ -36,5 +36,3 @@ const Business = () => {
     </div>
   );
 };
-
-export default Business;
