@@ -3,13 +3,19 @@ import styles from "./BusinessList.module.css";
 
 import Business from "../Business/Business";
 
-export default function BusinessList () {
+export default function BusinessList(props) {
+  const businesses = props.businesses;
+  console.log("Loading BusinessList...")
+  console.log(businesses);
+
   return (
     <div className={styles.BusinessList}>
-      <Business />
-      <Business />
-      <Business />
-      <Business />
+      {
+        businesses.map((x) => {
+          console.log(x);
+          return (<Business />)
+        })
+      }
       <Business />
       <Business />
     </div>
